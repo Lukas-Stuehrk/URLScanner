@@ -9,6 +9,11 @@ struct UrlScannerView: View {
     private let highlightsPublisher: PassthroughSubject<[CGRect], Never>
     private let highlights: Publishers.ReceiveOn<PassthroughSubject<[CGRect], Never>, DispatchQueue>
 
+    // We don't process the full camera image, instead we only process a smaller region of it. This rectangular
+    // describes the position of the region of interest in the camera stream in normalized coordinates, where the origin
+    // is the upper-left corner.
+    private let regionOfInterest = CGRect(x: 0, y: 0, width: 1, height: 0.2)
+
     @State var currentUrl: URL?
 
     init() {
@@ -20,7 +25,7 @@ struct UrlScannerView: View {
         self.highlightsPublisher = highlightPublishSubject
         self.highlights = highlightPublishSubject.receive(on: DispatchQueue.main)
         var dropped = 0
-        self.videoFrameProcessing = VideoFrameProcessing(captureSession: cameraControl.captureSession) { frameResult in
+        self.videoFrameProcessing = VideoFrameProcessing(captureSession: cameraControl.captureSession, regionOfInterest: regionOfInterest) { frameResult in
             switch frameResult {
             case .noMatch:
                 dropped += 1
@@ -29,6 +34,7 @@ struct UrlScannerView: View {
                 if dropped > 8 {
                     urlPublishSubject.send(nil)
                 }
+                highlightPublishSubject.send([])
             case .urlExtracted(let urlString, count: let count, regions: let regions):
                 dropped = 0
                 // TODO: 8 frames is an arbitrary value. Try different values or even go with a more sophisticated
@@ -52,40 +58,33 @@ struct UrlScannerView: View {
 
     var body: some View {
 
-        CameraLiveView(captureSession: cameraControl.captureSession, highlights: highlights)
+        CameraLiveView(
+            captureSession: cameraControl.captureSession,
+            regionOfInterest: regionOfInterest,
+            highlights: highlights
+        )
             .overlay(
                 GeometryReader { geometry in
-                    Rectangle()
-                        .fill(Color.black.opacity(0.2))
-                        .frame(
-                            width: geometry.size.width,
-                            height: geometry.size.height * 0.8,
-                            alignment: .topLeading
-                        )
-                        .offset(y: geometry.size.height * 0.2)
-                        .overlay(
-                            VStack {
-                                if let url = currentUrl {
-                                    UrlPreview(url: url)
-                                        .frame(height: geometry.size.height * 0.8)
-                                        .offset(y: geometry.size.height * 0.2)
-                                        .overlay(
-                                            Button(action: start) {
-                                                HStack {
-                                                    Image(systemName: "doc.text.viewfinder")
-                                                    Text("Scan again")
-                                                }
-                                                .padding()
-                                            }
-                                            .background(Color(UIColor.secondarySystemBackground).cornerRadius(4))
-                                            .padding()
-                                            .offset(y: geometry.size.height * 0.2),
-                                            alignment: .bottomTrailing
-                                        )
-                                }
-                            },
-                            alignment: .top
-                        )
+                    VStack {
+                        if let url = currentUrl {
+                            UrlPreview(url: url)
+                                .frame(height: geometry.size.height * 0.8)
+                                .offset(y: geometry.size.height * 0.2)
+                                .overlay(
+                                    Button(action: start) {
+                                        HStack {
+                                            Image(systemName: "doc.text.viewfinder")
+                                            Text("Scan again")
+                                        }
+                                        .padding()
+                                    }
+                                    .background(Color(UIColor.secondarySystemBackground).cornerRadius(4))
+                                    .padding()
+                                    .offset(y: geometry.size.height * 0.2),
+                                    alignment: .bottomTrailing
+                                )
+                        }
+                    }
                 }
             )
             .onReceive(urlPublisher) {
