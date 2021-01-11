@@ -1,10 +1,3 @@
-//
-//  Augmented_ReadingUITests.swift
-//  Augmented ReadingUITests
-//
-//  Created by Lukas Stührk on 16.12.20.
-//
-
 import XCTest
 
 class Augmented_ReadingUITests: XCTestCase {

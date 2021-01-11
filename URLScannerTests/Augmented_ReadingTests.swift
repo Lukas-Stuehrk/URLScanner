@@ -1,12 +1,5 @@
-//
-//  Augmented_ReadingTests.swift
-//  Augmented ReadingTests
-//
-//  Created by Lukas Stührk on 16.12.20.
-//
-
 import XCTest
-@testable import Augmented_Reading
+@testable import URLScanner
 
 class Augmented_ReadingTests: XCTestCase {
 

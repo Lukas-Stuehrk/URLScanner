@@ -8,7 +8,7 @@ class VideoFrameProcessing: NSObject {
     private let captureSession: AVCaptureSession
 
     private let videoDataOutput = AVCaptureVideoDataOutput()
-    private let videoDataOutputQueue = DispatchQueue(label: "net.stuehrk.lukas.Augmented-Reading.VideoDataOutputQueue")
+    private let videoDataOutputQueue = DispatchQueue(label: "net.stuehrk.lukas.URLScanner.VideoDataOutputQueue")
 
     private var request: VNRecognizeTextRequest!
 

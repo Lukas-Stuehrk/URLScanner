@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8C5DC951258A71D600E4EFBA /* VideoFrameProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5DC950258A71D600E4EFBA /* VideoFrameProcessing.swift */; };
 		8C5DC95C258AC8A400E4EFBA /* UrlPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5DC95B258AC8A400E4EFBA /* UrlPreview.swift */; };
-		8C636B36258A6AAD00D240BC /* Augmented_ReadingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C636B35258A6AAD00D240BC /* Augmented_ReadingApp.swift */; };
+		8C636B36258A6AAD00D240BC /* URLScannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C636B35258A6AAD00D240BC /* URLScannerApp.swift */; };
 		8C636B38258A6AAD00D240BC /* UrlScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C636B37258A6AAD00D240BC /* UrlScannerView.swift */; };
 		8C636B3A258A6AAE00D240BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C636B39258A6AAE00D240BC /* Assets.xcassets */; };
 		8C636B3D258A6AAE00D240BC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C636B3C258A6AAE00D240BC /* Preview Assets.xcassets */; };
@@ -41,16 +41,16 @@
 /* Begin PBXFileReference section */
 		8C5DC950258A71D600E4EFBA /* VideoFrameProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFrameProcessing.swift; sourceTree = "<group>"; };
 		8C5DC95B258AC8A400E4EFBA /* UrlPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlPreview.swift; sourceTree = "<group>"; };
-		8C636B32258A6AAD00D240BC /* Augmented Reading.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Augmented Reading.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C636B35258A6AAD00D240BC /* Augmented_ReadingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Augmented_ReadingApp.swift; sourceTree = "<group>"; };
+		8C636B32258A6AAD00D240BC /* URLScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C636B35258A6AAD00D240BC /* URLScannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLScannerApp.swift; sourceTree = "<group>"; };
 		8C636B37258A6AAD00D240BC /* UrlScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlScannerView.swift; sourceTree = "<group>"; };
 		8C636B39258A6AAE00D240BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C636B3C258A6AAE00D240BC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8C636B3E258A6AAE00D240BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C636B43258A6AAE00D240BC /* Augmented ReadingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Augmented ReadingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C636B43258A6AAE00D240BC /* URLScannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URLScannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C636B47258A6AAE00D240BC /* Augmented_ReadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Augmented_ReadingTests.swift; sourceTree = "<group>"; };
 		8C636B49258A6AAE00D240BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C636B4E258A6AAE00D240BC /* Augmented ReadingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Augmented ReadingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C636B4E258A6AAE00D240BC /* URLScannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URLScannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C636B52258A6AAE00D240BC /* Augmented_ReadingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Augmented_ReadingUITests.swift; sourceTree = "<group>"; };
 		8C636B54258A6AAE00D240BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C636B64258A6ADC00D240BC /* CameraLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLiveView.swift; sourceTree = "<group>"; };
@@ -87,9 +87,9 @@
 		8C636B29258A6AAD00D240BC = {
 			isa = PBXGroup;
 			children = (
-				8C636B34258A6AAD00D240BC /* Augmented Reading */,
-				8C636B46258A6AAE00D240BC /* Augmented ReadingTests */,
-				8C636B51258A6AAE00D240BC /* Augmented ReadingUITests */,
+				8C636B34258A6AAD00D240BC /* URLScanner */,
+				8C636B46258A6AAE00D240BC /* URLScannerTests */,
+				8C636B51258A6AAE00D240BC /* URLScannerUITests */,
 				8C636B33258A6AAD00D240BC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,24 +97,24 @@
 		8C636B33258A6AAD00D240BC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C636B32258A6AAD00D240BC /* Augmented Reading.app */,
-				8C636B43258A6AAE00D240BC /* Augmented ReadingTests.xctest */,
-				8C636B4E258A6AAE00D240BC /* Augmented ReadingUITests.xctest */,
+				8C636B32258A6AAD00D240BC /* URLScanner.app */,
+				8C636B43258A6AAE00D240BC /* URLScannerTests.xctest */,
+				8C636B4E258A6AAE00D240BC /* URLScannerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8C636B34258A6AAD00D240BC /* Augmented Reading */ = {
+		8C636B34258A6AAD00D240BC /* URLScanner */ = {
 			isa = PBXGroup;
 			children = (
 				8C636B6C258A6BFE00D240BC /* Video Processing */,
 				8C636B63258A6ABF00D240BC /* UI */,
-				8C636B35258A6AAD00D240BC /* Augmented_ReadingApp.swift */,
+				8C636B35258A6AAD00D240BC /* URLScannerApp.swift */,
 				8C636B39258A6AAE00D240BC /* Assets.xcassets */,
 				8C636B3E258A6AAE00D240BC /* Info.plist */,
 				8C636B3B258A6AAE00D240BC /* Preview Content */,
 			);
-			path = "Augmented Reading";
+			path = URLScanner;
 			sourceTree = "<group>";
 		};
 		8C636B3B258A6AAE00D240BC /* Preview Content */ = {
@@ -125,22 +125,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8C636B46258A6AAE00D240BC /* Augmented ReadingTests */ = {
+		8C636B46258A6AAE00D240BC /* URLScannerTests */ = {
 			isa = PBXGroup;
 			children = (
 				8C636B47258A6AAE00D240BC /* Augmented_ReadingTests.swift */,
 				8C636B49258A6AAE00D240BC /* Info.plist */,
 			);
-			path = "Augmented ReadingTests";
+			path = URLScannerTests;
 			sourceTree = "<group>";
 		};
-		8C636B51258A6AAE00D240BC /* Augmented ReadingUITests */ = {
+		8C636B51258A6AAE00D240BC /* URLScannerUITests */ = {
 			isa = PBXGroup;
 			children = (
 				8C636B52258A6AAE00D240BC /* Augmented_ReadingUITests.swift */,
 				8C636B54258A6AAE00D240BC /* Info.plist */,
 			);
-			path = "Augmented ReadingUITests";
+			path = URLScannerUITests;
 			sourceTree = "<group>";
 		};
 		8C636B63258A6ABF00D240BC /* UI */ = {
@@ -175,9 +175,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8C636B31258A6AAD00D240BC /* Augmented Reading */ = {
+		8C636B31258A6AAD00D240BC /* URLScanner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C636B57258A6AAE00D240BC /* Build configuration list for PBXNativeTarget "Augmented Reading" */;
+			buildConfigurationList = 8C636B57258A6AAE00D240BC /* Build configuration list for PBXNativeTarget "URLScanner" */;
 			buildPhases = (
 				8C636B2E258A6AAD00D240BC /* Sources */,
 				8C636B2F258A6AAD00D240BC /* Frameworks */,
@@ -187,14 +187,14 @@
 			);
 			dependencies = (
 			);
-			name = "Augmented Reading";
+			name = URLScanner;
 			productName = "Augmented Reading";
-			productReference = 8C636B32258A6AAD00D240BC /* Augmented Reading.app */;
+			productReference = 8C636B32258A6AAD00D240BC /* URLScanner.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8C636B42258A6AAE00D240BC /* Augmented ReadingTests */ = {
+		8C636B42258A6AAE00D240BC /* URLScannerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C636B5A258A6AAE00D240BC /* Build configuration list for PBXNativeTarget "Augmented ReadingTests" */;
+			buildConfigurationList = 8C636B5A258A6AAE00D240BC /* Build configuration list for PBXNativeTarget "URLScannerTests" */;
 			buildPhases = (
 				8C636B3F258A6AAE00D240BC /* Sources */,
 				8C636B40258A6AAE00D240BC /* Frameworks */,
@@ -205,14 +205,14 @@
 			dependencies = (
 				8C636B45258A6AAE00D240BC /* PBXTargetDependency */,
 			);
-			name = "Augmented ReadingTests";
+			name = URLScannerTests;
 			productName = "Augmented ReadingTests";
-			productReference = 8C636B43258A6AAE00D240BC /* Augmented ReadingTests.xctest */;
+			productReference = 8C636B43258A6AAE00D240BC /* URLScannerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8C636B4D258A6AAE00D240BC /* Augmented ReadingUITests */ = {
+		8C636B4D258A6AAE00D240BC /* URLScannerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C636B5D258A6AAE00D240BC /* Build configuration list for PBXNativeTarget "Augmented ReadingUITests" */;
+			buildConfigurationList = 8C636B5D258A6AAE00D240BC /* Build configuration list for PBXNativeTarget "URLScannerUITests" */;
 			buildPhases = (
 				8C636B4A258A6AAE00D240BC /* Sources */,
 				8C636B4B258A6AAE00D240BC /* Frameworks */,
@@ -223,9 +223,9 @@
 			dependencies = (
 				8C636B50258A6AAE00D240BC /* PBXTargetDependency */,
 			);
-			name = "Augmented ReadingUITests";
+			name = URLScannerUITests;
 			productName = "Augmented ReadingUITests";
-			productReference = 8C636B4E258A6AAE00D240BC /* Augmented ReadingUITests.xctest */;
+			productReference = 8C636B4E258A6AAE00D240BC /* URLScannerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -250,7 +250,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8C636B2D258A6AAD00D240BC /* Build configuration list for PBXProject "Augmented Reading" */;
+			buildConfigurationList = 8C636B2D258A6AAD00D240BC /* Build configuration list for PBXProject "URLScanner" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -263,9 +263,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8C636B31258A6AAD00D240BC /* Augmented Reading */,
-				8C636B42258A6AAE00D240BC /* Augmented ReadingTests */,
-				8C636B4D258A6AAE00D240BC /* Augmented ReadingUITests */,
+				8C636B31258A6AAD00D240BC /* URLScanner */,
+				8C636B42258A6AAE00D240BC /* URLScannerTests */,
+				8C636B4D258A6AAE00D240BC /* URLScannerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,7 +307,7 @@
 				8CAE4673258B5A24000F90BF /* Detector.swift in Sources */,
 				8C5DC95C258AC8A400E4EFBA /* UrlPreview.swift in Sources */,
 				8C636B38258A6AAD00D240BC /* UrlScannerView.swift in Sources */,
-				8C636B36258A6AAD00D240BC /* Augmented_ReadingApp.swift in Sources */,
+				8C636B36258A6AAD00D240BC /* URLScannerApp.swift in Sources */,
 				8C5DC951258A71D600E4EFBA /* VideoFrameProcessing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,12 +333,12 @@
 /* Begin PBXTargetDependency section */
 		8C636B45258A6AAE00D240BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8C636B31258A6AAD00D240BC /* Augmented Reading */;
+			target = 8C636B31258A6AAD00D240BC /* URLScanner */;
 			targetProxy = 8C636B44258A6AAE00D240BC /* PBXContainerItemProxy */;
 		};
 		8C636B50258A6AAE00D240BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8C636B31258A6AAD00D240BC /* Augmented Reading */;
+			target = 8C636B31258A6AAD00D240BC /* URLScanner */;
 			targetProxy = 8C636B4F258A6AAE00D240BC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -466,16 +466,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Augmented Reading/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"URLScanner/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Augmented Reading/Info.plist";
+				INFOPLIST_FILE = URLScanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "net.stuehrk.lukas.Augmented-Reading";
+				PRODUCT_BUNDLE_IDENTIFIER = net.stuehrk.lukas.URLScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -488,16 +488,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Augmented Reading/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"URLScanner/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Augmented Reading/Info.plist";
+				INFOPLIST_FILE = URLScanner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "net.stuehrk.lukas.Augmented-Reading";
+				PRODUCT_BUNDLE_IDENTIFIER = net.stuehrk.lukas.URLScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -511,18 +511,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Augmented ReadingTests/Info.plist";
+				INFOPLIST_FILE = URLScannerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "net.stuehrk.lukas.Augmented-ReadingTests";
+				PRODUCT_BUNDLE_IDENTIFIER = net.stuehrk.lukas.URLScannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Augmented Reading.app/Augmented Reading";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/URLScanner.app/URLScanner";
 			};
 			name = Debug;
 		};
@@ -533,18 +533,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Augmented ReadingTests/Info.plist";
+				INFOPLIST_FILE = URLScannerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "net.stuehrk.lukas.Augmented-ReadingTests";
+				PRODUCT_BUNDLE_IDENTIFIER = net.stuehrk.lukas.URLScannerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Augmented Reading.app/Augmented Reading";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/URLScanner.app/URLScanner";
 			};
 			name = Release;
 		};
@@ -554,13 +554,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Augmented ReadingUITests/Info.plist";
+				INFOPLIST_FILE = URLScannerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "net.stuehrk.lukas.Augmented-ReadingUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = net.stuehrk.lukas.URLScannerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -574,13 +574,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Augmented ReadingUITests/Info.plist";
+				INFOPLIST_FILE = URLScannerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "net.stuehrk.lukas.Augmented-ReadingUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = net.stuehrk.lukas.URLScannerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -591,7 +591,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8C636B2D258A6AAD00D240BC /* Build configuration list for PBXProject "Augmented Reading" */ = {
+		8C636B2D258A6AAD00D240BC /* Build configuration list for PBXProject "URLScanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8C636B55258A6AAE00D240BC /* Debug */,
@@ -600,7 +600,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C636B57258A6AAE00D240BC /* Build configuration list for PBXNativeTarget "Augmented Reading" */ = {
+		8C636B57258A6AAE00D240BC /* Build configuration list for PBXNativeTarget "URLScanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8C636B58258A6AAE00D240BC /* Debug */,
@@ -609,7 +609,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C636B5A258A6AAE00D240BC /* Build configuration list for PBXNativeTarget "Augmented ReadingTests" */ = {
+		8C636B5A258A6AAE00D240BC /* Build configuration list for PBXNativeTarget "URLScannerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8C636B5B258A6AAE00D240BC /* Debug */,
@@ -618,7 +618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C636B5D258A6AAE00D240BC /* Build configuration list for PBXNativeTarget "Augmented ReadingUITests" */ = {
+		8C636B5D258A6AAE00D240BC /* Build configuration list for PBXNativeTarget "URLScannerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8C636B5E258A6AAE00D240BC /* Debug */,

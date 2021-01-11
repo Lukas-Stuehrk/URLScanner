@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct Augmented_ReadingApp: App {
+struct URLScannerApp: App {
     var body: some Scene {
         WindowGroup {
             UrlScannerView()

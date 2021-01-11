@@ -5,7 +5,7 @@ import Foundation
 struct CameraControl {
 
     let captureSession = AVCaptureSession()
-    private let captureSessionQueue = DispatchQueue(label: "net.stuehrk.lukas.Augmented-Reading.CaptureSessionQueue")
+    private let captureSessionQueue = DispatchQueue(label: "net.stuehrk.lukas.URLScanner.CaptureSessionQueue")
     private let errors: [CameraControl.Error]
 
     init() {
