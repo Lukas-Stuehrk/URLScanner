@@ -1,0 +1,61 @@
+name: build_appstore
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: macos-10.15
+    steps:
+      - uses: actions/checkout@v2
+      # See https://github.com/actions/virtual-environments/blob/releases/macOS-10.15/20201212/images/macos/macos-10.15-Readme.md
+      # for the locations of the various Xcodes.
+      - run: sudo xcode-select -s /Applications/Xcode_12.3.app
+      - name: Import Certificats
+        env:
+          DEVELOPMENT_CERTIFICATE: ${{ secrets.DEVELOPMENT_CERTIFICATE }}
+          DISTRIBUTION_CERTIFICATE: ${{ secrets.DISTRIBUTION_CERTIFICATE }}
+          SIGNING_CERTIFICATE: ${{ secrets.SIGNING_CERTIFICATE }}
+          CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
+        # We need to create a new keychain in this step and import the certificates to the keychain. Otherwise the
+        # build will hang with a keychain prompt when we try to build the app.
+        # See https://github.com/actions/virtual-environments/issues/1820 for details.
+        run: |
+          KEYCHAIN_PATH=$RUNNER_TEMP/`uuidgen`
+          security create-keychain -p iebee3Qu $KEYCHAIN_PATH
+          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+          security list-keychain -d user -s $KEYCHAIN_PATH
+
+          echo "${DEVELOPMENT_CERTIFICATE}" | base64 -d > development.cer
+          security import development.cer -k ${KEYCHAIN_PATH}
+          rm development.cer
+
+          echo "${DISTRIBUTION_CERTIFICATE}" | base64 -d > distribution.cer
+          security import distribution.cer -k ${KEYCHAIN_PATH}
+          rm distribution.cer
+
+          echo "${SIGNING_CERTIFICATE}" | base64 -d > signing.p12
+          security import signing.p12 -t agg -P "${CERTIFICATE_PASSWORD}" -k ${KEYCHAIN_PATH} -A
+          rm signing.p12
+
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k iebee3Qu $KEYCHAIN_PATH > /dev/null
+          security unlock-keychain -p iebee3Qu $KEYCHAIN_PATH
+
+      - name: Install Mobile Provisioning Profile
+        env:
+          PROVISIONING_PROFILE: ${{ secrets.PROVISIONING_PROFILE }}
+        run: |
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          echo "${PROVISIONING_PROFILE}" | base64 -d > ~/Library/MobileDevice/Provisioning\ Profiles/ef221c92-1a13-4f93-8388-77a5045eb9bc.mobileprovision
+      - name: Build app
+        env:
+          DEVELOPMENT_TEAM: ${{ secrets.DEVELOPMENT_TEAM }}
+        run: xcodebuild archive -scheme 'URLScanner' -archivePath URLScanner.xcarchive -destination generic/platform=iOS DEVELOPMENT_TEAM=${DEVELOPMENT_TEAM} CURRENT_PROJECT_VERSION=${GITHUB_RUN_NUMBER} CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY="iPhone Distribution" PROVISIONING_PROFILE_SPECIFIER="Github Action"
+      - name: Sign app
+        run: xcodebuild -exportArchive -archivePath URLScanner.xcarchive -exportPath $RUNNER_TEMP -exportOptionsPlist export.plist
+      - name: Upload to App Store
+        env:
+          APP_STORE_USERNAME: ${{ secrets.APP_STORE_USERNAME }}
+          APP_STORE_PASSWORD: ${{ secrets.APP_STORE_PASSWORD }}
+        run: |
+          xcrun altool --validate-app --type ios --file $RUNNER_TEMP/URLScanner.ipa --username "$APP_STORE_USERNAME" --password @env:APP_STORE_PASSWORD
+          xcrun altool --upload-app --type ios --file $RUNNER_TEMP/URLScanner.ipa --username "$APP_STORE_USERNAME" --password @env:APP_STORE_PASSWORD

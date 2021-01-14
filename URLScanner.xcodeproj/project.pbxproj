@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C5554DD25AF85CF009DDADA /* URLScanner.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = URLScanner.xctestplan; path = URLScanner.xcodeproj/URLScanner.xctestplan; sourceTree = "<group>"; };
 		8C5DC950258A71D600E4EFBA /* VideoFrameProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFrameProcessing.swift; sourceTree = "<group>"; };
 		8C5DC95B258AC8A400E4EFBA /* UrlPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlPreview.swift; sourceTree = "<group>"; };
 		8C636B32258A6AAD00D240BC /* URLScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +88,7 @@
 		8C636B29258A6AAD00D240BC = {
 			isa = PBXGroup;
 			children = (
+				8C5554DD25AF85CF009DDADA /* URLScanner.xctestplan */,
 				8C636B34258A6AAD00D240BC /* URLScanner */,
 				8C636B46258A6AAE00D240BC /* URLScannerTests */,
 				8C636B51258A6AAE00D240BC /* URLScannerUITests */,

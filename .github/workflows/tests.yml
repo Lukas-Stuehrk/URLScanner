@@ -1,0 +1,11 @@
+name: tests
+on: [pull_request]
+jobs:
+  check-bats-version:
+    runs-on: macos-10.15
+    steps:
+      - uses: actions/checkout@v2
+      # See https://github.com/actions/virtual-environments/blob/releases/macOS-10.15/20201212/images/macos/macos-10.15-Readme.md
+      # for the locations of the various Xcodes.
+      - run: sudo xcode-select -s /Applications/Xcode_12.3.app
+      - run: xcodebuild test -destination 'platform=iOS Simulator,name=iPhone 12' -scheme 'URLScanner' CURRENT_PROJECT_VERSION=${GITHUB_RUN_NUMBER}

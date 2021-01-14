@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "8C2A5BF7-E58F-4091-9E43-D95BB189E340",
+      "name" : "Default Test Configuration",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:URLScanner.xcodeproj",
+        "identifier" : "8C636B42258A6AAE00D240BC",
+        "name" : "URLScannerTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:URLScanner.xcodeproj",
+        "identifier" : "8C636B4D258A6AAE00D240BC",
+        "name" : "URLScannerUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
